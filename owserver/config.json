@@ -1,15 +1,15 @@
 {
     "name": "1-wire Server",
-    "version": "0.1.1",
+    "version": "0.1.3",
     "slug": "owserver",
-    "description": "One wire server",
+    "description": "Share 1-wire network over TCP/IP with owserver.",
     "url": "https://github.com/bestlibre/hassio-addons/tree/master/owserver",
     "startup": "system",
     "boot": "auto",
-    "image": "bestlibre/{arch}-owserver",
-    "options": {},
-    "schema": {},
-    "devices": ["/dev/i2c-1:/dev/i2c-1:rwm"],
-    "ports": {"4304/tcp": null},
-    "arch": ["armv7", "armhf", "amd64", "aarch64", "i386"]
+    "options": { "device": "/dev/ttyUSB0", "log_level": 2 },
+    "schema": { "device": "str", "log_level": "int(1,5)" },
+    "ports": {"4304/tcp": 4304},
+	"ports_description": {"4304/tcp": "owserver"},
+    "arch": ["armv7", "armhf", "amd64", "aarch64", "i386"],
+	"auto_uart": true
 }

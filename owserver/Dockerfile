@@ -12,8 +12,6 @@ RUN set -ex \
  && update-rc.d owserver disable
 
 
-# Copy data for add-on
-COPY owfs.conf /etc/owfs.conf
 COPY run.sh /
 RUN chmod a+x /run.sh
 

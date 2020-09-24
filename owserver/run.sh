@@ -1,4 +1,3 @@
-#!/bin/bash
-set -e
+#!/usr/bin/env bashio
 
-owserver -c /etc/owfs.conf --foreground
+owserver -d "$(bashio::config 'device')" --foreground --error_level "$(bashio::config 'log_level')"
